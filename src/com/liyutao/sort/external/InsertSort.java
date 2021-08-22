@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @Author liyutao
  * @Date 2021/8/22 14:21
- * @Description https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
+ * @Description https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
  * 假设不存在重复元素,可设输入数据是前N个整数的某个排列(只有相对顺序才是最重要的)并设所有的排列都是等可能的。
  * 在这些假设下，有如下定理：
  *  定理1: N个互异数的数组的平均逆序数是N(N-1)/4
