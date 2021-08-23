@@ -25,7 +25,7 @@ public class ShellSort {
         //希尔（Shell）原始步长序列：N / 2，N / 4，...，1（重复除以2）
         //希伯德（Hibbard）的步长序列：1，3，7，...，2 k - 1
         //克努特（Knuth）的步长序列：1，4，13，...，（3 k - 1）/ 2
-        //塞奇威克（Sedgewick） 的步长序列：1，5，19，41，109
+        //塞奇威克（Sedgewick） 的步长序列：1，5，19，41，109（可能是最好的）
         int[] arr = {1,9,2,10,3,11,4,12,5,13,6,14,7,15,8,16};
         shellSort(arr);
         System.out.println(Arrays.toString(arr));

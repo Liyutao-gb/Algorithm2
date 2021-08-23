@@ -3,9 +3,14 @@ package com.liyutao.sort.external;
 import java.util.Arrays;
 
 /**
+ * 假设数据中只包含整数(不包含对象);
+ * 假设排序工作能够在主存中完成(元素个数小于几百万)
+ * 不能在主存中完成而必须在磁盘或磁带上完成的排序叫做外部排序。
+ *
  * @Author liyutao
  * @Date 2021/8/22 14:21
  * @Description https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+ *
  * 假设不存在重复元素,可设输入数据是前N个整数的某个排列(只有相对顺序才是最重要的)并设所有的排列都是等可能的。
  * 在这些假设下，有如下定理：
  *  定理1: N个互异数的数组的平均逆序数是N(N-1)/4
