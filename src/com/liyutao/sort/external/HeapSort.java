@@ -8,6 +8,7 @@ import java.util.Arrays;
  * @Description https://www.cs.usfca.edu/~galles/visualization/HeapSort.html
  * 升序：构建大顶堆   降序：构建小顶堆
  * 从上到下第一个非叶子节点：N/2 - 1，第一个叶子节点：N/2
+ * 堆(完全二叉树)的高度：h = log(N+1)
  * 定理1：对N个互异项的随机排列进行堆排序所用比较的平均次数为2NlogN - O(NloglogN)
  *
  * 初始化堆的时候，对于每个非叶子结点，都要调用上述函数，将它与它的孩子结点进行比较和交换，顺序是从后向前。
