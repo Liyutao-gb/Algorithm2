@@ -25,7 +25,7 @@ public class MergeSort {
     public static void main(String[] args) {
 
         // 时间复杂度/平均时间复杂度：O(nlogn)
-        // 空间复杂度：O(N)
+        // 空间复杂度：O(N) 临时表的长度
         // 稳定
         int[] arr = { 9, 6, 11, 3, 5, 12, 8, 7, 10, 15, 14, 4, 1, 13, 2 };
         mergeSort(arr, 0, arr.length - 1);
