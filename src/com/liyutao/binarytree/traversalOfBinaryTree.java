@@ -1,8 +1,6 @@
 package com.liyutao.binarytree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @Author liyutao
@@ -19,6 +17,7 @@ import java.util.Stack;
  *      后序遍历构造一颗新的树。
  *          （1）如果符号是操作数，那么就建立一个单节点树并将他推入栈中；
  *          （2）如果符号是操作符，那么就从栈中弹出两棵树T1和T2并形成一颗新的树。
+ *
  *
  */
 public class traversalOfBinaryTree {
@@ -89,6 +88,29 @@ public class traversalOfBinaryTree {
         while (!stack2.isEmpty()) {
             System.out.println(stack2.pop().val);
         }
+    }
+
+    public void sequenceOrder(TreeNode root) {
+        if (root == null)
+            return;
+
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            int size = stack.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode pop = stack.pop();
+                System.out.print(pop.val + " ");
+                if (pop.left != null) {
+                    stack.addLast(pop.left);
+                }
+                if (pop.right != null) {
+                    stack.addLast(pop.right);
+                }
+            }
+            System.out.println();
+        }
+
     }
 
     public void recursionOrder(TreeNode root) {
