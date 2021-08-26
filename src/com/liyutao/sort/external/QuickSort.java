@@ -36,6 +36,8 @@ import java.util.Arrays;
  *      定理：只使用元素间比较的任何排序算法均需要N(NlogN)次比较
  *          logN! = NlogN
  *
+ *  外部排序：简单算法，多路合并、多相合并、替换选择
+ *
  */
 public class QuickSort {
 
