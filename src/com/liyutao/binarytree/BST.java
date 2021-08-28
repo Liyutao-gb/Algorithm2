@@ -8,7 +8,7 @@ import java.util.Stack;
  * @Description 二叉查找树 ADT(Abstract Data Type)
  *  二叉查找树要和中序遍历联系。
  *
- * 二叉查找某个值，二叉查找树的验证
+ * 二叉查找某个值，二叉查找树的验证、二叉搜索树的公共祖先
  *
  */
 public class BST {
@@ -30,6 +30,18 @@ public class BST {
             return root;
         }
     }
+
+    public TreeNode commonAncestor(TreeNode root, TreeNode left, TreeNode right) {
+        if (root.val > left.val && root.val > right.val) {
+            return commonAncestor(root.left, left, right);
+        } else if (root.val < left.val && root.val < right.val) {
+            return commonAncestor(root.right, left, right);
+        } else {
+            return root;
+        }
+    }
+
+
 
     public boolean isBST(TreeNode root) {
         if (root == null)
