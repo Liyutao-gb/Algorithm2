@@ -20,7 +20,7 @@ import java.util.*;
  *
  *
  */
-public class traversalOfBinaryTree {
+public class TraversalBinaryTree {
 
     public static void main(String[] args) {
 
