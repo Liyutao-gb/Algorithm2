@@ -90,6 +90,20 @@ public class TraversalBinaryTree {
         }
     }
 
+    //遍历 递归版
+    public void recursionOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        recursionOrder(root.left);
+        System.out.println(root.val);
+        recursionOrder(root.right);
+
+    }
+
+
+    // 层序遍历
     public void sequenceOrder(TreeNode root) {
         if (root == null)
             return;
@@ -110,18 +124,18 @@ public class TraversalBinaryTree {
             }
             System.out.println();
         }
-
     }
 
-    public void recursionOrder(TreeNode root) {
-        if (root == null) {
-            return;
-        }
+    //二叉树的公共祖先
+    public TreeNode commonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null || root == p || root == q)
+            return root;
 
-        recursionOrder(root.left);
-        System.out.println(root.val);
-        recursionOrder(root.right);
-
+        TreeNode left = commonAncestor(root.left, p, q);
+        TreeNode right = commonAncestor(root.right, p, q);
+        if (left != null && right != null)
+            return root;
+        return left == null ? right : left;
     }
 
 

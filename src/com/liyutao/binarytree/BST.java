@@ -17,6 +17,7 @@ public class BST {
 
     }
 
+    //二叉搜索树查找值
     public TreeNode findVal(TreeNode root, int val) {
         if (root == null) {
             return null;
@@ -31,6 +32,7 @@ public class BST {
         }
     }
 
+    // 二叉搜索树的公共祖先
     public TreeNode commonAncestor(TreeNode root, TreeNode left, TreeNode right) {
         if (root.val > left.val && root.val > right.val) {
             return commonAncestor(root.left, left, right);
@@ -42,7 +44,7 @@ public class BST {
     }
 
 
-
+    //验证二叉搜索树（中序遍历法）
     public boolean isBST(TreeNode root) {
         if (root == null)
             return true;
@@ -65,6 +67,7 @@ public class BST {
         return true;
     }
 
+    //二叉搜索树的验证 递归
     public boolean isBSTRecursion(TreeNode root, int left, int right) {
         if (root == null)
             return true;

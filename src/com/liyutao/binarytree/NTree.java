@@ -17,6 +17,7 @@ public class NTree {
 
     }
 
+    //前序遍历 循环
     public List<Integer> preOrder(Node root) {
         List<Integer> list = new ArrayList<>();
         Stack<Node> stack = new Stack<>();
@@ -32,6 +33,7 @@ public class NTree {
         return list;
     }
 
+    //前序遍历 递归
     public List<Integer> preOrderRecursion(Node root) {
         if (root == null)
             return new ArrayList<>();
@@ -50,11 +52,12 @@ public class NTree {
         }
     }
 
+    //后序遍历 循环 （根右左 放入一个集合 最后逆向取数据）
     public List<Integer> postOrder(Node root) {
         List<Integer> list = new ArrayList<>();
+
         Stack<Node> stack = new Stack<>();
         stack.push(root);
-
         while (!stack.isEmpty()) {
             Node node = stack.pop();
             list.add(0, node.val);
@@ -66,6 +69,7 @@ public class NTree {
         return list;
     }
 
+    //后序遍历 递归版
     public List<Integer> postOrderRecursion(Node root) {
         if (root == null)
             return new ArrayList<>();
