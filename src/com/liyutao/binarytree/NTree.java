@@ -6,7 +6,7 @@ import java.util.*;
  * @Author liyutao
  * @Date 2021/8/28 13:41
  * @Description B树、N叉树
- *
+ *  N叉树的应用场景：过滤器（异或关系）。
  *  N叉树和二叉树区别之处在于N叉树是根节点指向子节点的List<children>集合
  *  N叉树的前序遍历 和 后序遍历（递归和循环）、层序遍历
  *
