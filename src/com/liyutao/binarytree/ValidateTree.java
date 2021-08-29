@@ -8,7 +8,9 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @Date 2021/8/29 16:22
  * @Description
  *
- * 相同的树、对称的树、完全二叉树
+ * 相同的树、对称的树。
+ * 完全二叉树：树中所含的n个节点和满二叉树中编号为1至n的节点一一对应。
+ * 满二叉树：深度为k且含有2的k次方-1个节点的二叉树。
  *
  * poll():移除头部元素，如果为空，返回null。   peek()：返回队列头部的元素，如果队列为空，返回null。
  * take()：如果队列为空则阻塞调用线程，直到队列不为空然后返回元素。  element():返回队列的头元素，如果队列为空，则抛NoSuchElementException异常。
@@ -21,6 +23,9 @@ public class ValidateTree {
 
     public static void main(String[] args) {
 
+        Queue<Integer> queue = new LinkedBlockingQueue<>();
+        queue.add(null);
+        System.out.println(queue);
     }
 
     // 相同的树、对称的树
@@ -57,5 +62,29 @@ public class ValidateTree {
         }
         return true;
     }
+
+    //完全二叉树
+    public boolean completeBinaryTree(TreeNode root) {
+        if (root == null)
+            return true;
+
+        TreeNode cur = root;
+        Queue<TreeNode> queue = new LinkedBlockingQueue<>();
+        queue.add(cur);
+        boolean flag = false;
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            if (node == null) {
+                flag = true;
+                continue;
+            }
+            if (flag)
+                return false;
+            queue.add(root.left);
+            queue.add(root.right);
+        }
+        return true;
+    }
+
 
 }
