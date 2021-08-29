@@ -8,6 +8,8 @@ package com.liyutao.binarytree;
  *
  * 平衡树的验证
  *
+ * 红黑树：从根节点到叶子节点的最长长度不能多余到最小树叶节点长度的两倍。
+ *
  */
 public class AVLTree {
 

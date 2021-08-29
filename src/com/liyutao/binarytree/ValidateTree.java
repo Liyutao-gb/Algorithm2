@@ -25,7 +25,7 @@ public class ValidateTree {
 
         Queue<Integer> queue = new LinkedBlockingQueue<>();
         queue.add(null);
-        System.out.println(queue);
+        System.out.println(queue.poll());
     }
 
     // 相同的树、对称的树
@@ -53,7 +53,7 @@ public class ValidateTree {
                 continue;
             if (node1 == null || node2 == null)
                 return false;
-            if (node1.val != node2.val)
+            if (node1.val != node2.val)   // Integer 有缓存池，此处不安全
                 return false;
             queue.offer(node1.left);
             queue.offer(node2.left);
