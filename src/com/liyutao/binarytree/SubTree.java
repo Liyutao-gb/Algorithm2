@@ -12,10 +12,17 @@ package com.liyutao.binarytree;
  *    4   5		         1    2
  *   / \
  *  1   2
+ * return true;
  *
  * 另一棵树的子结构。
+ * 输入：s			输入 t：
+ *      3				    3
+ *     / \				  /  \
+ *    4   5		         4    5
+ *   / \
+ *  1   2
  *
- *
+ *  return true;
  */
 public class SubTree {
 
@@ -51,7 +58,7 @@ public class SubTree {
     }
 
     public boolean isSameStructure(TreeNode root, TreeNode subStructure) {
-        if (subStructure == null)
+        if (subStructure == null)  // subStructure下面无节点，不用继续往下判断了，返回即可
             return true;
         if (root == null)
             return false;
