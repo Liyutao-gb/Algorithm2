@@ -5,7 +5,6 @@ package com.liyutao.linkedlist;
  * @Date 2021/9/6 7:54
  * @Description
  * 合并两个链表   合并K个链表
- * 两两交换链表节点  K个为一组交换链表节点
  */
 public class MergeListNode {
 
@@ -65,45 +64,5 @@ public class MergeListNode {
         ListNode l2 = mergeKListNode(lists, mid + 1, right);
         return mergeTwoListNode(l1, l2);
     }
-
-    //两两交换链表节点 递归
-    public ListNode swapPairsRec(ListNode head) {
-        if (head == null || head.next == null)
-            return head;
-
-        // head -> next -> swapPairs(next.next)
-        ListNode next = head.next;
-        head.next = swapPairs(next.next);
-        next.next = head;
-        return next;
-    }
-
-    public ListNode swapPairs(ListNode head) {
-        if (head == null || head.next == null)
-            return head;
-
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode cur = dummy;
-        // cur   first second third
-        while (cur.next != null && cur.next.next != null) {
-            ListNode first = cur.next;
-            ListNode second = cur.next.next;
-            first.next = second.next;
-            second.next = first;
-            cur.next = second;
-            cur = first;
-        }
-        return dummy.next;
-    }
-
-
-    //K个一组交换链表节点
-    public ListNode swapNodeKGroup(ListNode head) {
-
-
-    }
-
-
 
 }
