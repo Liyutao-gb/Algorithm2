@@ -1,5 +1,8 @@
 package com.liyutao.linkedlist;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @Author liyutao
  * @Date 2021/9/6 23:59
@@ -10,6 +13,7 @@ package com.liyutao.linkedlist;
  * 删除链表节点：
  *      输入: 1->1->2->3->3
  *      输出: 2->3
+ * 无序单链表中删除重复值
  *
  * 查找链表节点
  *
@@ -61,6 +65,27 @@ public class SearchDelNode {
         return dummy.next;
     }
 
+    //无序链表删除节点
+    public ListNode removeDupInNoOrderList(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+
+        Set<Integer> set = new HashSet<>();
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode pre = dummy;
+        ListNode cur = head;
+        while (cur != null) {
+            if (set.contains(cur.val)) {
+                pre.next = cur.next;
+            } else {
+                set.add(cur.val);
+                pre = cur;
+            }
+            cur = cur.next;
+        }
+        return dummy.next;
+    }
 
 
 }
