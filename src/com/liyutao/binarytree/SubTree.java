@@ -43,7 +43,7 @@ public class SubTree {
             return true;
         if (root == null || subTree == null)
             return false;
-        if (!root.val.equals(subTree.val))
+        if (root.val != subTree.val)
             return false;
         return isSameTree(root.left, subTree.left) && isSameTree(root.right, subTree.right);
     }
@@ -62,7 +62,7 @@ public class SubTree {
             return true;
         if (root == null)
             return false;
-        if (!root.val.equals(subStructure.val))
+        if (root.val != subStructure.val)
             return false;
 
         return isSameStructure(root.left, subStructure.left) && isSameStructure(root.right, subStructure.right);

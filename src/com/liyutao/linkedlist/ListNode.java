@@ -7,11 +7,11 @@ package com.liyutao.linkedlist;
  */
 public class ListNode {
 
-    Integer val;
+    int val;
 
     ListNode next;
 
-    public ListNode(Integer val) {
+    public ListNode(int val) {
         this.val = val;
     }
 }
