@@ -13,13 +13,13 @@ import java.util.Set;
  * 删除链表节点：
  *      输入: 1->1->2->3->3
  *      输出: 2->3
- * 无序单链表中删除重复值
+ * 无序链表中删除重复值
  *
- * 查找链表节点
- *
+ * 删除倒数第N个节点
+ *      快慢指针
  *
  */
-public class SearchDelNode {
+public class DelListNode {
 
     public static void main(String[] args) {
 
@@ -86,6 +86,30 @@ public class SearchDelNode {
         }
         return dummy.next;
     }
+
+    //移除链表倒数第N个节点，快慢指针
+    public ListNode removeNthNode(ListNode head, int n) {
+        if (head == null || n < 1)
+            return head;
+
+        ListNode cur = head;
+        for (int i = 0; i < n - 1; i++) {
+            cur = cur.next;
+        }
+        if (cur == null)
+            return head;
+        if (cur.next == null)
+            return head.next;
+
+        ListNode slow = head;
+        while (cur.next.next != null) {
+            slow = slow.next;
+            cur = cur.next;
+        }
+        slow.next = slow.next.next;
+        return head;
+    }
+
 
 
 }
